@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ON Running Champs-Élysées</title>
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg1:#f7f8fa;
+      --bg2:#e9edf1;
+      --panel:#ffffff;
+      --panel-2:#f7f9fb;
+      --text:#0b0d12;
+      --muted:#69727d;
+      --white:#ffffff;
+      --line:rgba(11,13,18,.08);
+      --line-strong:rgba(11,13,18,.12);
+      --shadow:0 30px 80px rgba(15,23,42,.10);
+      --shadow-soft:0 14px 30px rgba(15,23,42,.07);
+      --radius-xl:36px;
+      --radius-lg:20px;
+      --radius-pill:999px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      min-height:100vh;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:
+        radial-gradient(circle at top center, rgba(255,255,255,.96) 0%, transparent 24%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,.55) 0%, transparent 18%),
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
+      color:var(--text);
+    }
+
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+
+    .card{
+      width:min(100%, 590px);
+      background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(247,249,251,.96));
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+      padding:34px 26px 24px;
+      border:1px solid rgba(255,255,255,.95);
+      position:relative;
+      overflow:hidden;
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top left, rgba(0,0,0,.025), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(0,0,0,.02), transparent 24%);
+      pointer-events:none;
+    }
+
+    .inner{position:relative;z-index:1}
+
+    .logo-wrap{
+      width:132px;
+      height:132px;
+      margin:0 auto 22px;
+      border-radius:50%;
+      background:#fff;
+      border:1px solid rgba(11,13,18,.08);
+      display:grid;
+      place-items:center;
+      box-shadow:0 18px 40px rgba(15,23,42,.10);
+      overflow:hidden;
+    }
+
+    .logo-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      display:block;
+    }
+
+    h1{
+      margin:0;
+      text-align:center;
+      font-size:clamp(2.05rem, 4.6vw, 2.95rem);
+      line-height:1;
+      letter-spacing:-0.075em;
+      font-weight:900;
+      color:#090b10;
+    }
+
+    .top-meta{
+      margin:10px auto 0;
+      width:fit-content;
+      padding:8px 14px;
+      border-radius:var(--radius-pill);
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      color:#5b6570;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .cta-stack{
+      display:grid;
+      gap:12px;
+      margin:26px 0 20px;
+    }
+
+    .cta-btn{
+      min-height:64px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(180deg,#fff,#fbfcfd);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 18px;
+      font-size:18px;
+      font-weight:800;
+      color:#0d1117;
+      box-shadow:var(--shadow-soft);
+      transition:.24s ease;
+    }
+
+    .cta-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .cta-icon{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:#f4f7fa;
+      border:1px solid rgba(11,13,18,.06);
+      flex:none;
+    }
+
+    .cta-btn i{
+      font-size:17px;
+      color:#111827;
+    }
+
+    .cta-text{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:2px;
+      min-width:0;
+    }
+
+    .cta-text strong{
+      font-size:17px;
+      line-height:1.1;
+      letter-spacing:-0.03em;
+    }
+
+    .cta-text span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:600;
+      line-height:1.25;
+    }
+
+    .cta-arrow{
+      color:#98a1ab;
+      font-size:18px;
+      flex:none;
+    }
+
+    .cta-btn:hover,
+    .social-link:hover,
+    .bottom-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 34px rgba(15,23,42,.10);
+    }
+
+    .socials{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:8px 0 22px;
+    }
+
+    .social-link{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 10px 20px rgba(15,23,42,.06);
+      transition:.2s ease;
+      font-size:20px;
+    }
+
+    .social-link.instagram{color:#e1306c}
+    .social-link.facebook{color:#1877f2}
+    .social-link.twitter{color:#111111}
+    .social-link.tiktok{color:#111111}
+    .social-link.youtube{color:#ff0000}
+    .social-link.linkedin{color:#0a66c2}
+
+    .bottom-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      border-top:1px solid rgba(11,13,18,.06);
+      padding-top:18px;
+    }
+
+    .bottom-btn{
+      min-height:58px;
+      border-radius:18px;
+      border:1px solid var(--line-strong);
+      background:linear-gradient(180deg,#fff,#fbfcfd);
+      color:#111827;
+      font-size:16px;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      cursor:pointer;
+      transition:.22s ease;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .bottom-btn i{font-size:16px}
+
+    .mini-note{
+      margin-top:14px;
+      text-align:center;
+      color:#8a94a0;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:22px;
+      transform:translateX(-50%) translateY(18px);
+      background:#111827;
+      color:#fff;
+      padding:12px 16px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      opacity:0;
+      pointer-events:none;
+      transition:.25s ease;
+      z-index:30;
+      white-space:nowrap;
+      box-shadow:0 12px 34px rgba(17,24,39,.24);
+    }
+
+    .toast.show{
+      opacity:1;
+      transform:translateX(-50%) translateY(0);
+    }
+
+    .fade{animation:fadeUp .55s ease both}
+    .delay-1{animation-delay:.06s}
+    .delay-2{animation-delay:.12s}
+    .delay-3{animation-delay:.18s}
+    .delay-4{animation-delay:.24s}
+    .delay-5{animation-delay:.30s}
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(10px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    @media (max-width:560px){
+      .card{padding:24px 14px 18px;border-radius:28px}
+      .logo-wrap{width:110px;height:110px;margin-bottom:18px}
+      .top-meta{font-size:11px;padding:7px 12px}
+      .cta-btn{font-size:16px;min-height:60px;padding:12px 14px}
+      .cta-text strong{font-size:16px}
+      .cta-text span{font-size:12px}
+      .bottom-btn{font-size:15px}
+      .social-link{width:44px;height:44px;font-size:18px}
+      .bottom-actions{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="inner">
+      <div class="logo-wrap fade">
+        <img src="images (1).png" alt="ON Logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"/>
+      </div>
+
+      <h1 class="fade delay-1">ON RUNNING<br>CHAMPS-ÉLYSÉES</h1>
+
+      <div class="top-meta fade delay-2">Digital card • Store links • Paris</div>
+
+      
+
+      <div class="cta-stack">
+        <a class="cta-btn fade delay-2" href="https://www.on.com/fr-fr/" target="_blank" rel="noopener">
+          <div class="cta-left">
+            <div class="cta-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="cta-text">
+              <strong>On Site</strong>
+              <span>Site officiel ON France</span>
+            </div>
+          </div>
+          <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="cta-btn fade delay-3" href="https://www.on.com/fr-fr/support?srsltid=AfmBOoqQ_VAqnHY57av9hLAIiD9q4c3I7rR5HV0U3tdtl7FMMrzhvYwY" target="_blank" rel="noopener">
+          <div class="cta-left">
+            <div class="cta-icon"><i class="fa-solid fa-box-open"></i></div>
+            <div class="cta-text">
+              <strong>Happiness Delivery</strong>
+              <span>Support et aide client</span>
+            </div>
+          </div>
+          <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="cta-btn fade delay-4" href="https://www.strava.com/clubs/1311511?share_sig=719CF9771775824028&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXLy4pSixL1EssKNDLyczL1q%2FMzfV1T88JTzFKsq8rSk1LLSrKzEuPTyrKLy9OLbL1zCsuSUwvSswFAPUi8VpAAAAA&_branch_match_id=1571129834209601144&fbclid=PAVERFWARFzt5leHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadToQ75GAOQ6tc4kf8soRB6SaSQYy8JEzqneTZhKfLL3SbDJIvDMWZvhCMKcA_aem_K2Po-Kj7CkrX83_ol3uhLQ" target="_blank" rel="noopener">
+          <div class="cta-left">
+            <div class="cta-icon"><i class="fa-solid fa-person-running"></i></div>
+            <div class="cta-text">
+              <strong>Strava On</strong>
+              <span>Communauté et club running</span>
+            </div>
+          </div>
+          <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="cta-btn fade delay-5" href="https://www.google.com/maps/@48.9050897,2.4444928,8z/data=!4m3!11m2!2sLXMGH7Jbr6ZMeLHrWBfKow!3e3?authuser=1&g_ep=Eg1tbF8yMDI2MDQwNl8wIJvbDyoASAJQAg%3D%3D" target="_blank" rel="noopener">
+          <div class="cta-left">
+            <div class="cta-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="cta-text">
+              <strong>Adresse</strong>
+              <span>Ouvrir dans Google Maps</span>
+            </div>
+          </div>
+          <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+      </div>
+
+      <div class="socials fade delay-5" aria-label="Réseaux sociaux">
+        <a class="social-link instagram" href="https://www.instagram.com/onrunning/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a class="social-link facebook" href="https://www.facebook.com/On/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="social-link twitter" href="https://x.com/on" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a class="social-link tiktok" href="https://www.tiktok.com/@onrunning" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="social-link youtube" href="https://www.youtube.com/@onrunning" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a class="social-link linkedin" href="https://www.linkedin.com/company/on-running" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="bottom-actions fade delay-5">
+        <button class="bottom-btn" id="saveBtn" type="button"><i class="fa-regular fa-address-card"></i> Enregistrer</button>
+        <button class="bottom-btn" id="shareBtn" type="button"><i class="fa-solid fa-share-nodes"></i> Partager</button>
+      </div>
+
+      <div class="mini-note">Digital card • ON Champs-Élysées</div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">Lien copié</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    const shareBtn = document.getElementById('shareBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
+    function showToast(message){
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    async function shareCard(){
+      const data = {
+        title: 'ON Running Champs-Élysées',
+        text: 'Découvrez les liens utiles du magasin ON Running Champs-Élysées.',
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(data);
+          showToast('Partage ouvert');
+          return;
+        }
+      } catch(e) {}
+
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        showToast('Lien copié');
+      } catch(e) {
+        showToast('Partage indisponible');
+      }
+    }
+
+    function downloadVCard(){
+      const vcard = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:ON Running Champs-Élysées',
+        'ORG:ON Running Champs-Élysées',
+        'URL:https://www.on.com/fr-fr/',
+        'item1.URL:https://www.google.com/maps/@48.9050897,2.4444928,8z/data=!4m3!11m2!2sLXMGH7Jbr6ZMeLHrWBfKow!3e3?authuser=1&g_ep=Eg1tbF8yMDI2MDQwNl8wIJvbDyoASAJQAg%3D%3D',
+        'item1.X-ABLabel:Adresse',
+        'NOTE:Carte digitale ON Running Champs-Élysées',
+        'END:VCARD'
+      ].join('\n');
+
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'on-running-champs-elysees.vcf';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      showToast('Contact enregistré');
+    }
+
+    shareBtn.addEventListener('click', shareCard);
+    saveBtn.addEventListener('click', downloadVCard);
+  </script>
+</body>
+</html>
