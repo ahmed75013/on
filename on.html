@@ -11,17 +11,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root{
-      --bg1:#f7f8fa;
-      --bg2:#e9edf1;
-      --panel:#ffffff;
-      --panel-2:#f7f9fb;
-      --text:#0b0d12;
-      --muted:#69727d;
+      --bg1:#07090d;
+      --bg2:#11141a;
+      --panel:#11151b;
+      --panel-2:#181d25;
+      --text:#f5f7fb;
+      --muted:#9ca7b5;
       --white:#ffffff;
-      --line:rgba(11,13,18,.08);
-      --line-strong:rgba(11,13,18,.12);
-      --shadow:0 30px 80px rgba(15,23,42,.10);
-      --shadow-soft:0 14px 30px rgba(15,23,42,.07);
+      --line:rgba(255,255,255,.08);
+      --line-strong:rgba(255,255,255,.12);
+      --shadow:0 30px 80px rgba(0,0,0,.38);
+      --shadow-soft:0 14px 30px rgba(0,0,0,.24);
       --radius-xl:36px;
       --radius-lg:20px;
       --radius-pill:999px;
@@ -33,8 +33,8 @@
       min-height:100vh;
       font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       background:
-        radial-gradient(circle at top center, rgba(255,255,255,.96) 0%, transparent 24%),
-        radial-gradient(circle at bottom right, rgba(255,255,255,.55) 0%, transparent 18%),
+        radial-gradient(circle at top center, rgba(255,255,255,.06) 0%, transparent 18%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,.04) 0%, transparent 14%),
         linear-gradient(180deg,var(--bg1),var(--bg2));
       display:grid;
       place-items:center;
@@ -47,11 +47,11 @@
 
     .card{
       width:min(100%, 590px);
-      background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(247,249,251,.96));
+      background:linear-gradient(180deg,rgba(17,21,27,.96),rgba(24,29,37,.98));
       border-radius:var(--radius-xl);
       box-shadow:var(--shadow);
       padding:34px 26px 24px;
-      border:1px solid rgba(255,255,255,.95);
+      border:1px solid rgba(255,255,255,.08);
       position:relative;
       overflow:hidden;
       backdrop-filter:blur(18px);
@@ -63,8 +63,8 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at top left, rgba(0,0,0,.025), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(0,0,0,.02), transparent 24%);
+        radial-gradient(circle at top left, rgba(255,255,255,.05), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,.03), transparent 24%);
       pointer-events:none;
     }
 
@@ -76,10 +76,10 @@
       margin:0 auto 22px;
       border-radius:50%;
       background:#fff;
-      border:1px solid rgba(11,13,18,.08);
+      border:1px solid rgba(255,255,255,.12);
       display:grid;
       place-items:center;
-      box-shadow:0 18px 40px rgba(15,23,42,.10);
+      box-shadow:0 18px 40px rgba(0,0,0,.28);
       overflow:hidden;
     }
 
@@ -98,7 +98,7 @@
       line-height:1;
       letter-spacing:-0.075em;
       font-weight:900;
-      color:#090b10;
+      color:#ffffff;
     }
 
     .top-meta{
@@ -106,9 +106,9 @@
       width:fit-content;
       padding:8px 14px;
       border-radius:var(--radius-pill);
-      background:rgba(255,255,255,.82);
+      background:rgba(255,255,255,.04);
       border:1px solid var(--line);
-      color:#5b6570;
+      color:#b6c0cd;
       font-size:12px;
       font-weight:700;
       letter-spacing:.06em;
@@ -125,7 +125,7 @@
       min-height:64px;
       border:1px solid var(--line);
       border-radius:18px;
-      background:linear-gradient(180deg,#fff,#fbfcfd);
+      background:linear-gradient(180deg,#171c24,#12171e);
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -133,7 +133,7 @@
       padding:14px 18px;
       font-size:18px;
       font-weight:800;
-      color:#0d1117;
+      color:#f7f9fc;
       box-shadow:var(--shadow-soft);
       transition:.24s ease;
     }
@@ -151,14 +151,14 @@
       border-radius:14px;
       display:grid;
       place-items:center;
-      background:#f4f7fa;
-      border:1px solid rgba(11,13,18,.06);
+      background:#1d232d;
+      border:1px solid rgba(255,255,255,.06);
       flex:none;
     }
 
     .cta-btn i{
       font-size:17px;
-      color:#111827;
+      color:#ffffff;
     }
 
     .cta-text{
@@ -183,7 +183,7 @@
     }
 
     .cta-arrow{
-      color:#98a1ab;
+      color:#8691a0;
       font-size:18px;
       flex:none;
     }
@@ -192,7 +192,7 @@
     .social-link:hover,
     .bottom-btn:hover{
       transform:translateY(-2px);
-      box-shadow:0 18px 34px rgba(15,23,42,.10);
+      box-shadow:0 18px 34px rgba(0,0,0,.24);
     }
 
     .socials{
@@ -210,17 +210,17 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      background:#fff;
+      background:#171c24;
       border:1px solid var(--line);
-      box-shadow:0 10px 20px rgba(15,23,42,.06);
+      box-shadow:0 10px 20px rgba(0,0,0,.18);
       transition:.2s ease;
       font-size:20px;
     }
 
     .social-link.instagram{color:#e1306c}
     .social-link.facebook{color:#1877f2}
-    .social-link.twitter{color:#111111}
-    .social-link.tiktok{color:#111111}
+    .social-link.twitter{color:#ffffff}
+    .social-link.tiktok{color:#ffffff}
     .social-link.youtube{color:#ff0000}
     .social-link.linkedin{color:#0a66c2}
 
@@ -228,7 +228,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
-      border-top:1px solid rgba(11,13,18,.06);
+      border-top:1px solid rgba(255,255,255,.08);
       padding-top:18px;
     }
 
@@ -236,8 +236,8 @@
       min-height:58px;
       border-radius:18px;
       border:1px solid var(--line-strong);
-      background:linear-gradient(180deg,#fff,#fbfcfd);
-      color:#111827;
+      background:linear-gradient(180deg,#171c24,#12171e);
+      color:#f7f9fc;
       font-size:16px;
       font-weight:800;
       display:flex;
@@ -268,8 +268,8 @@
       appearance:none;
       -webkit-appearance:none;
       border:1px solid var(--line-strong);
-      background:linear-gradient(180deg,#fff,#fbfcfd);
-      color:#111827;
+      background:linear-gradient(180deg,#171c24,#12171e);
+      color:#ffffff;
       min-height:36px;
       border-radius:999px;
       padding:4px 20px 4px 8px;
@@ -286,7 +286,7 @@
       right:8px;
       top:50%;
       transform:translateY(-52%);
-      color:#7b8794;
+      color:#a5afbb;
       pointer-events:none;
       font-size:10px;
       font-weight:800;
@@ -295,7 +295,7 @@
     .mini-note{
       margin-top:14px;
       text-align:center;
-      color:#8a94a0;
+      color:#8e98a5;
       font-size:12px;
       font-weight:700;
       letter-spacing:.06em;
@@ -307,8 +307,8 @@
       left:50%;
       bottom:22px;
       transform:translateX(-50%) translateY(18px);
-      background:#111827;
-      color:#fff;
+      background:#f7f9fc;
+      color:#111827;
       padding:12px 16px;
       border-radius:999px;
       font-size:13px;
@@ -318,7 +318,7 @@
       transition:.25s ease;
       z-index:30;
       white-space:nowrap;
-      box-shadow:0 12px 34px rgba(17,24,39,.24);
+      box-shadow:0 12px 34px rgba(0,0,0,.24);
     }
 
     .toast.show{
@@ -391,8 +391,8 @@
           <div class="cta-left">
             <div class="cta-icon"><i class="fa-solid fa-globe"></i></div>
             <div class="cta-text">
-              <strong data-i18n="site_title">On Site</strong>
-              <span data-i18n="site_desc">Site officiel ON France</span>
+              <strong data-i18n="site_title">On.com</strong>
+              <span data-i18n="site_desc">Site officiel</span>
             </div>
           </div>
           <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
@@ -413,7 +413,7 @@
           <div class="cta-left">
             <div class="cta-icon"><i class="fa-solid fa-person-running"></i></div>
             <div class="cta-text">
-              <strong data-i18n="strava_title">Strava On</strong>
+              <strong data-i18n="strava_title">On Running Club</strong>
               <span data-i18n="strava_desc">Communauté et club running</span>
             </div>
           </div>
@@ -424,8 +424,30 @@
           <div class="cta-left">
             <div class="cta-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div class="cta-text">
-              <strong data-i18n="address_title">Adresse</strong>
-              <span data-i18n="address_desc">Ouvrir dans Google Maps</span>
+              <strong data-i18n="address_title">On Dream Spots</strong>
+              <span data-i18n="address_desc">Come visit paris with us</span>
+            </div>
+          </div>
+          <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="cta-btn fade delay-5" href="https://culture.on.com" target="_blank" rel="noopener">
+          <div class="cta-left">
+            <div class="cta-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="cta-text">
+              <strong data-i18n="careers_title">Careers at On</strong>
+              <span data-i18n="careers_desc">Décrochez votre prochaine opportunité</span>
+            </div>
+          </div>
+          <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <a class="cta-btn fade delay-5" href="#" id="wifiBtn">
+          <div class="cta-left">
+            <div class="cta-icon"><i class="fa-solid fa-wifi"></i></div>
+            <div class="cta-text">
+              <strong data-i18n="wifi_title">Wi‑Fi</strong>
+              <span data-i18n="wifi_desc">Demandez l’accès en magasin</span>
             </div>
           </div>
           <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
@@ -457,20 +479,21 @@
     const shareBtn = document.getElementById('shareBtn');
     const saveBtn = document.getElementById('saveBtn');
     const languageSelect = document.getElementById('languageSelect');
+    const wifiBtn = document.getElementById('wifiBtn');
 
     const translations = {
-      fr: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digital card • Store links • Paris', site_title: 'On Site', site_desc: 'Site officiel ON France', delivery_title: 'Happiness Delivery', delivery_desc: 'Support et aide client', strava_title: 'Strava On', strava_desc: 'Communauté et club running', address_title: 'Adresse', address_desc: 'Ouvrir dans Google Maps', save: 'Enregistrer', share: 'Partager', mini_note: 'Digital card • ON Champs-Élysées', share_text: 'Découvrez les liens utiles du magasin ON Running Champs-Élysées.', share_open: 'Partage ouvert', copied: 'Lien copié', share_unavailable: 'Partage indisponible', contact_saved: 'Contact enregistré' },
-      en: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digital card • Store links • Paris', site_title: 'On Site', site_desc: 'Official ON France website', delivery_title: 'Happiness Delivery', delivery_desc: 'Customer support and help', strava_title: 'Strava On', strava_desc: 'Running club and community', address_title: 'Address', address_desc: 'Open in Google Maps', save: 'Save', share: 'Share', mini_note: 'Digital card • ON Champs-Élysées', share_text: 'Discover the key links for the ON Running Champs-Élysées store.', share_open: 'Share opened', copied: 'Link copied', share_unavailable: 'Share unavailable', contact_saved: 'Contact saved' },
-      es: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Tarjeta digital • Enlaces tienda • París', site_title: 'Sitio web', site_desc: 'Sitio oficial de ON Francia', delivery_title: 'Happiness Delivery', delivery_desc: 'Soporte y ayuda al cliente', strava_title: 'Strava On', strava_desc: 'Club y comunidad running', address_title: 'Dirección', address_desc: 'Abrir en Google Maps', save: 'Guardar', share: 'Compartir', mini_note: 'Tarjeta digital • ON Champs-Élysées', share_text: 'Descubre los enlaces útiles de la tienda ON Running Champs-Élysées.', share_open: 'Compartir abierto', copied: 'Enlace copiado', share_unavailable: 'Compartir no disponible', contact_saved: 'Contacto guardado' },
-      de: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digitale Karte • Store-Links • Paris', site_title: 'Website', site_desc: 'Offizielle ON Frankreich Website', delivery_title: 'Happiness Delivery', delivery_desc: 'Kundensupport und Hilfe', strava_title: 'Strava On', strava_desc: 'Running Club und Community', address_title: 'Adresse', address_desc: 'In Google Maps öffnen', save: 'Speichern', share: 'Teilen', mini_note: 'Digitale Karte • ON Champs-Élysées', share_text: 'Entdecken Sie die wichtigen Links des ON Running Champs-Élysées Stores.', share_open: 'Teilen geöffnet', copied: 'Link kopiert', share_unavailable: 'Teilen nicht verfügbar', contact_saved: 'Kontakt gespeichert' },
-      it: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Biglietto digitale • Link store • Parigi', site_title: 'Sito web', site_desc: 'Sito ufficiale ON Francia', delivery_title: 'Happiness Delivery', delivery_desc: 'Supporto e assistenza clienti', strava_title: 'Strava On', strava_desc: 'Club e community running', address_title: 'Indirizzo', address_desc: 'Apri in Google Maps', save: 'Salva', share: 'Condividi', mini_note: 'Biglietto digitale • ON Champs-Élysées', share_text: 'Scopri i link utili del negozio ON Running Champs-Élysées.', share_open: 'Condivisione aperta', copied: 'Link copiato', share_unavailable: 'Condivisione non disponibile', contact_saved: 'Contatto salvato' },
-      ar: { title_html: 'أون رانينغ<br>شانزليزيه', top_meta: 'بطاقة رقمية • روابط المتجر • باريس', site_title: 'الموقع', site_desc: 'الموقع الرسمي لـ ON France', delivery_title: 'التوصيل السعيد', delivery_desc: 'الدعم ومساعدة العملاء', strava_title: 'سترافا أون', strava_desc: 'مجتمع ونادي الجري', address_title: 'العنوان', address_desc: 'فتح في خرائط جوجل', save: 'حفظ', share: 'مشاركة', mini_note: 'بطاقة رقمية • ON Champs-Élysées', share_text: 'اكتشف الروابط المفيدة لمتجر ON Running Champs-Élysées.', share_open: 'تم فتح المشاركة', copied: 'تم نسخ الرابط', share_unavailable: 'المشاركة غير متاحة', contact_saved: 'تم حفظ جهة الاتصال' },
-      pt: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Cartão digital • Links da loja • Paris', site_title: 'Site', site_desc: 'Site oficial ON França', delivery_title: 'Happiness Delivery', delivery_desc: 'Suporte e ajuda ao cliente', strava_title: 'Strava On', strava_desc: 'Clube e comunidade de corrida', address_title: 'Endereço', address_desc: 'Abrir no Google Maps', save: 'Guardar', share: 'Partilhar', mini_note: 'Cartão digital • ON Champs-Élysées', share_text: 'Descubra os links úteis da loja ON Running Champs-Élysées.', share_open: 'Partilha aberta', copied: 'Link copiado', share_unavailable: 'Partilha indisponível', contact_saved: 'Contacto guardado' },
-      nl: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digitale kaart • Winkellinks • Parijs', site_title: 'Website', site_desc: 'Officiële ON Frankrijk website', delivery_title: 'Happiness Delivery', delivery_desc: 'Klantenservice en hulp', strava_title: 'Strava On', strava_desc: 'Runningclub en community', address_title: 'Adres', address_desc: 'Openen in Google Maps', save: 'Opslaan', share: 'Delen', mini_note: 'Digitale kaart • ON Champs-Élysées', share_text: 'Ontdek de nuttige links van de ON Running Champs-Élysées winkel.', share_open: 'Delen geopend', copied: 'Link gekopieerd', share_unavailable: 'Delen niet beschikbaar', contact_saved: 'Contact opgeslagen' },
-      ru: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Цифровая карта • Ссылки магазина • Париж', site_title: 'Сайт', site_desc: 'Официальный сайт ON France', delivery_title: 'Happiness Delivery', delivery_desc: 'Поддержка и помощь клиентам', strava_title: 'Strava On', strava_desc: 'Клуб и сообщество бегунов', address_title: 'Адрес', address_desc: 'Открыть в Google Maps', save: 'Сохранить', share: 'Поделиться', mini_note: 'Цифровая карта • ON Champs-Élysées', share_text: 'Откройте полезные ссылки магазина ON Running Champs-Élysées.', share_open: 'Поделиться открыто', copied: 'Ссылка скопирована', share_unavailable: 'Поделиться недоступно', contact_saved: 'Контакт сохранён' },
-      zh: { title_html: 'ON RUNNING<br>香榭丽舍', top_meta: '数字名片 • 门店链接 • 巴黎', site_title: '官网', site_desc: 'ON 法国官方网站', delivery_title: 'Happiness Delivery', delivery_desc: '客户支持与帮助', strava_title: 'Strava On', strava_desc: '跑步俱乐部与社区', address_title: '地址', address_desc: '在 Google 地图中打开', save: '保存', share: '分享', mini_note: '数字名片 • ON Champs-Élysées', share_text: '查看 ON Running Champs-Élysées 门店的重要链接。', share_open: '已打开分享', copied: '链接已复制', share_unavailable: '无法分享', contact_saved: '联系人已保存' },
-      ja: { title_html: 'ON RUNNING<br>シャンゼリゼ', top_meta: 'デジタルカード • ストアリンク • パリ', site_title: 'サイト', site_desc: 'ON フランス公式サイト', delivery_title: 'Happiness Delivery', delivery_desc: 'カスタマーサポート', strava_title: 'Strava On', strava_desc: 'ランニングクラブとコミュニティ', address_title: '住所', address_desc: 'Googleマップで開く', save: '保存', share: '共有', mini_note: 'デジタルカード • ON Champs-Élysées', share_text: 'ON Running Champs-Élysées ストアの便利なリンクをご覧ください。', share_open: '共有を開きました', copied: 'リンクをコピーしました', share_unavailable: '共有できません', contact_saved: '連絡先を保存しました' },
-      tr: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Dijital kart • Mağaza bağlantıları • Paris', site_title: 'Site', site_desc: 'ON Fransa resmi sitesi', delivery_title: 'Happiness Delivery', delivery_desc: 'Müşteri desteği ve yardım', strava_title: 'Strava On', strava_desc: 'Koşu kulübü ve topluluğu', address_title: 'Adres', address_desc: 'Google Maps’te aç', save: 'Kaydet', share: 'Paylaş', mini_note: 'Dijital kart • ON Champs-Élysées', share_text: 'ON Running Champs-Élysées mağazasının faydalı bağlantılarını keşfedin.', share_open: 'Paylaşım açıldı', copied: 'Bağlantı kopyalandı', share_unavailable: 'Paylaşım kullanılamıyor', contact_saved: 'Kişi kaydedildi' }
+      fr: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digital card • Store links • Paris', site_title: 'On.com', site_desc: 'Site officiel', delivery_title: 'Happiness Delivery', delivery_desc: 'Support et aide client', strava_title: 'On Running Club', strava_desc: 'Communauté et club running', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Décrochez votre prochaine opportunité', wifi_title: 'Wi‑Fi', wifi_desc: 'Demandez l’accès en magasin', save: 'Enregistrer', share: 'Partager', mini_note: 'Digital card • ON Champs-Élysées', share_text: 'Découvrez les liens utiles du magasin ON Running Champs-Élysées.', share_open: 'Partage ouvert', copied: 'Lien copié', share_unavailable: 'Partage indisponible', contact_saved: 'Contact enregistré', wifi_toast: 'Accès Wi‑Fi disponible en magasin' },
+      en: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digital card • Store links • Paris', site_title: 'On.com', site_desc: 'Official website', delivery_title: 'Happiness Delivery', delivery_desc: 'Customer support and help', strava_title: 'On Running Club', strava_desc: 'Running club and community', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Land your next opportunity', wifi_title: 'Wi‑Fi', wifi_desc: 'Ask in store for access', save: 'Save', share: 'Share', mini_note: 'Digital card • ON Champs-Élysées', share_text: 'Discover the key links for the ON Running Champs-Élysées store.', share_open: 'Share opened', copied: 'Link copied', share_unavailable: 'Share unavailable', contact_saved: 'Contact saved', wifi_toast: 'Wi‑Fi access available in store' },
+      es: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Tarjeta digital • Enlaces tienda • París', site_title: 'On.com', site_desc: 'Sitio oficial', delivery_title: 'Happiness Delivery', delivery_desc: 'Soporte y ayuda al cliente', strava_title: 'On Running Club', strava_desc: 'Club y comunidad running', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Consigue tu próxima oportunidad', wifi_title: 'Wi‑Fi', wifi_desc: 'Pide el acceso en tienda', save: 'Guardar', share: 'Compartir', mini_note: 'Tarjeta digital • ON Champs-Élysées', share_text: 'Descubre los enlaces útiles de la tienda ON Running Champs-Élysées.', share_open: 'Compartir abierto', copied: 'Enlace copiado', share_unavailable: 'Compartir no disponible', contact_saved: 'Contacto guardado', wifi_toast: 'Acceso Wi‑Fi disponible en tienda' },
+      de: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digitale Karte • Store-Links • Paris', site_title: 'On.com', site_desc: 'Offizielle Website', delivery_title: 'Happiness Delivery', delivery_desc: 'Kundensupport und Hilfe', strava_title: 'On Running Club', strava_desc: 'Running Club und Community', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Finde deine nächste Chance', wifi_title: 'Wi‑Fi', wifi_desc: 'Zugang im Store anfragen', save: 'Speichern', share: 'Teilen', mini_note: 'Digitale Karte • ON Champs-Élysées', share_text: 'Entdecken Sie die wichtigen Links des ON Running Champs-Élysées Stores.', share_open: 'Teilen geöffnet', copied: 'Link kopiert', share_unavailable: 'Teilen nicht verfügbar', contact_saved: 'Kontakt gespeichert', wifi_toast: 'Wi‑Fi im Store verfügbar' },
+      it: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Biglietto digitale • Link store • Parigi', site_title: 'On.com', site_desc: 'Sito ufficiale', delivery_title: 'Happiness Delivery', delivery_desc: 'Supporto e assistenza clienti', strava_title: 'On Running Club', strava_desc: 'Club e community running', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Trova la tua prossima opportunità', wifi_title: 'Wi‑Fi', wifi_desc: 'Richiedi l’accesso in negozio', save: 'Salva', share: 'Condividi', mini_note: 'Biglietto digitale • ON Champs-Élysées', share_text: 'Scopri i link utili del negozio ON Running Champs-Élysées.', share_open: 'Condivisione aperta', copied: 'Link copiato', share_unavailable: 'Condivisione non disponibile', contact_saved: 'Contatto salvato', wifi_toast: 'Accesso Wi‑Fi disponibile in negozio' },
+      ar: { title_html: 'أون رانينغ<br>شانزليزيه', top_meta: 'بطاقة رقمية • روابط المتجر • باريس', site_title: 'On.com', site_desc: 'الموقع الرسمي', delivery_title: 'Happiness Delivery', delivery_desc: 'الدعم ومساعدة العملاء', strava_title: 'On Running Club', strava_desc: 'مجتمع ونادي الجري', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'احصل على فرصتك القادمة', wifi_title: 'واي فاي', wifi_desc: 'اطلب الوصول داخل المتجر', save: 'حفظ', share: 'مشاركة', mini_note: 'بطاقة رقمية • ON Champs-Élysées', share_text: 'اكتشف الروابط المفيدة لمتجر ON Running Champs-Élysées.', share_open: 'تم فتح المشاركة', copied: 'تم نسخ الرابط', share_unavailable: 'المشاركة غير متاحة', contact_saved: 'تم حفظ جهة الاتصال', wifi_toast: 'خدمة الواي فاي متاحة داخل المتجر' },
+      pt: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Cartão digital • Links da loja • Paris', site_title: 'On.com', site_desc: 'Site oficial', delivery_title: 'Happiness Delivery', delivery_desc: 'Suporte e ajuda ao cliente', strava_title: 'On Running Club', strava_desc: 'Clube e comunidade de corrida', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Conquiste sua próxima oportunidade', wifi_title: 'Wi‑Fi', wifi_desc: 'Peça acesso na loja', save: 'Guardar', share: 'Partilhar', mini_note: 'Cartão digital • ON Champs-Élysées', share_text: 'Descubra os links úteis da loja ON Running Champs-Élysées.', share_open: 'Partilha aberta', copied: 'Link copiado', share_unavailable: 'Partilha indisponível', contact_saved: 'Contacto guardado', wifi_toast: 'Acesso Wi‑Fi disponível na loja' },
+      nl: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Digitale kaart • Winkellinks • Parijs', site_title: 'On.com', site_desc: 'Officiële website', delivery_title: 'Happiness Delivery', delivery_desc: 'Klantenservice en hulp', strava_title: 'On Running Club', strava_desc: 'Runningclub en community', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Vind je volgende kans', wifi_title: 'Wi‑Fi', wifi_desc: 'Vraag toegang in de winkel', save: 'Opslaan', share: 'Delen', mini_note: 'Digitale kaart • ON Champs-Élysées', share_text: 'Ontdek de nuttige links van de ON Running Champs-Élysées winkel.', share_open: 'Delen geopend', copied: 'Link gekopieerd', share_unavailable: 'Delen niet beschikbaar', contact_saved: 'Contact opgeslagen', wifi_toast: 'Wi‑Fi beschikbaar in de winkel' },
+      ru: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Цифровая карта • Ссылки магазина • Париж', site_title: 'On.com', site_desc: 'Официальный сайт', delivery_title: 'Happiness Delivery', delivery_desc: 'Поддержка и помощь клиентам', strava_title: 'On Running Club', strava_desc: 'Клуб и сообщество бегунов', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Найдите свою следующую возможность', wifi_title: 'Wi‑Fi', wifi_desc: 'Запросите доступ в магазине', save: 'Сохранить', share: 'Поделиться', mini_note: 'Цифровая карта • ON Champs-Élysées', share_text: 'Откройте полезные ссылки магазина ON Running Champs-Élysées.', share_open: 'Поделиться открыто', copied: 'Ссылка скопирована', share_unavailable: 'Поделиться недоступно', contact_saved: 'Контакт сохранён', wifi_toast: 'Wi‑Fi доступен в магазине' },
+      zh: { title_html: 'ON RUNNING<br>香榭丽舍', top_meta: '数字名片 • 门店链接 • 巴黎', site_title: 'On.com', site_desc: '官方网站', delivery_title: 'Happiness Delivery', delivery_desc: '客户支持与帮助', strava_title: 'On Running Club', strava_desc: '跑步俱乐部与社区', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: '获得你的下一次机会', wifi_title: 'Wi‑Fi', wifi_desc: '请在门店获取访问权限', save: '保存', share: '分享', mini_note: '数字名片 • ON Champs-Élysées', share_text: '查看 ON Running Champs-Élysées 门店的重要链接。', share_open: '已打开分享', copied: '链接已复制', share_unavailable: '无法分享', contact_saved: '联系人已保存', wifi_toast: '门店提供 Wi‑Fi' },
+      ja: { title_html: 'ON RUNNING<br>シャンゼリゼ', top_meta: 'デジタルカード • ストアリンク • パリ', site_title: 'On.com', site_desc: '公式サイト', delivery_title: 'Happiness Delivery', delivery_desc: 'カスタマーサポート', strava_title: 'On Running Club', strava_desc: 'ランニングクラブとコミュニティ', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: '次のチャンスをつかもう', wifi_title: 'Wi‑Fi', wifi_desc: '店頭でアクセスをご確認ください', save: '保存', share: '共有', mini_note: 'デジタルカード • ON Champs-Élysées', share_text: 'ON Running Champs-Élysées ストアの便利なリンクをご覧ください。', share_open: '共有を開きました', copied: 'リンクをコピーしました', share_unavailable: '共有できません', contact_saved: '連絡先を保存しました', wifi_toast: '店内で Wi‑Fi を利用できます' },
+      tr: { title_html: 'ON RUNNING<br>CHAMPS-ÉLYSÉES', top_meta: 'Dijital kart • Mağaza bağlantıları • Paris', site_title: 'On.com', site_desc: 'Resmi site', delivery_title: 'Happiness Delivery', delivery_desc: 'Müşteri desteği ve yardım', strava_title: 'On Running Club', strava_desc: 'Koşu kulübü ve topluluğu', address_title: 'On Dream Spots', address_desc: 'Come visit paris with us', careers_title: 'Careers at On', careers_desc: 'Bir sonraki fırsatını yakala', wifi_title: 'Wi‑Fi', wifi_desc: 'Mağazada erişim isteyin', save: 'Kaydet', share: 'Paylaş', mini_note: 'Dijital kart • ON Champs-Élysées', share_text: 'ON Running Champs-Élysées mağazasının faydalı bağlantılarını keşfedin.', share_open: 'Paylaşım açıldı', copied: 'Bağlantı kopyalandı', share_unavailable: 'Paylaşım kullanılamıyor', contact_saved: 'Kişi kaydedildi', wifi_toast: 'Mağazada Wi‑Fi erişimi mevcut' }
     };
 
     let currentLang = 'fr';
@@ -552,7 +575,15 @@
     });
     shareBtn.addEventListener('click', shareCard);
     saveBtn.addEventListener('click', downloadVCard);
+    if (wifiBtn) {
+      wifiBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dict = translations[currentLang] || translations.fr;
+        showToast(dict.wifi_toast);
+      });
+    }
     applyTranslations('fr');
   </script>
 </body>
 </html>
+
