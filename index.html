@@ -251,15 +251,15 @@
 
     .bottom-btn i{font-size:16px}
 
-    .language-bar{
+    .top-tools{
       display:flex;
-      justify-content:center;
-      margin:16px 0 18px;
+      justify-content:flex-end;
+      margin:0 0 14px;
     }
 
     .language-select-wrap{
       position:relative;
-      width:min(100%, 280px);
+      width:min(100%, 190px);
     }
 
     .language-select{
@@ -269,10 +269,10 @@
       border:1px solid var(--line-strong);
       background:linear-gradient(180deg,#fff,#fbfcfd);
       color:#111827;
-      min-height:52px;
-      border-radius:16px;
-      padding:12px 44px 12px 16px;
-      font-size:15px;
+      min-height:48px;
+      border-radius:14px;
+      padding:10px 40px 10px 14px;
+      font-size:14px;
       font-weight:800;
       box-shadow:var(--shadow-soft);
       cursor:pointer;
@@ -283,12 +283,12 @@
       font-family:"Font Awesome 6 Free";
       font-weight:900;
       position:absolute;
-      right:16px;
+      right:14px;
       top:50%;
       transform:translateY(-50%);
       color:#7b8794;
       pointer-events:none;
-      font-size:13px;
+      font-size:12px;
     }
 
     .mini-note{
@@ -362,6 +362,19 @@
 
       <div class="top-meta fade delay-2">Digital card • Store links • Paris</div>
 
+      <div class="top-tools fade delay-2">
+        <div class="language-select-wrap">
+          <select class="language-select" id="languageSelect" aria-label="Choisir la langue">
+            <option value="fr">🇫🇷 FR</option>
+            <option value="en">🇬🇧 EN</option>
+            <option value="es">🇪🇸 ES</option>
+            <option value="de">🇩🇪 DE</option>
+            <option value="it">🇮🇹 IT</option>
+            <option value="ar">🇸🇦 AR</option>
+          </select>
+        </div>
+      </div>
+
       
 
       <div class="cta-stack">
@@ -408,19 +421,6 @@
           </div>
           <div class="cta-arrow"><i class="fa-solid fa-chevron-right"></i></div>
         </a>
-      </div>
-
-      <div class="language-bar fade delay-5">
-        <div class="language-select-wrap">
-          <select class="language-select" id="languageSelect" aria-label="Choisir la langue">
-            <option value="fr">🇫🇷 Français</option>
-            <option value="en">🇬🇧 English</option>
-            <option value="es">🇪🇸 Español</option>
-            <option value="de">🇩🇪 Deutsch</option>
-            <option value="it">🇮🇹 Italiano</option>
-            <option value="ar">🇸🇦 العربية</option>
-          </select>
-        </div>
       </div>
 
       <div class="socials fade delay-5" aria-label="Réseaux sociaux">
@@ -563,12 +563,12 @@
     let currentLang = 'fr';
 
     function applyTranslations(lang) {
-      currentLang = lang;
       const dict = translations[lang] || translations.fr;
+      currentLang = lang;
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
         if (dict[key]) el.textContent = dict[key];
       });
     }
@@ -594,12 +594,12 @@
           showToast(dict.share_open);
           return;
         }
-      } catch(e) {}
+      } catch (e) {}
 
       try {
         await navigator.clipboard.writeText(window.location.href);
         showToast(dict.copied);
-      } catch(e) {
+      } catch (e) {
         showToast(dict.share_unavailable);
       }
     }
@@ -631,7 +631,9 @@
       showToast(dict.contact_saved);
     }
 
-    languageSelect.addEventListener('change', (e) => applyTranslations(e.target.value));
+    languageSelect.addEventListener('change', function (e) {
+      applyTranslations(e.target.value);
+    });
     shareBtn.addEventListener('click', shareCard);
     saveBtn.addEventListener('click', downloadVCard);
     applyTranslations('fr');
